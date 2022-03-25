@@ -1,0 +1,99 @@
+/* Imports & supports */
+@import url("https://rsms.me/inter/inter-ui.css");
+/* Reset & Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+body {
+  line-height: 1.5;
+  min-height: 100vh;
+}
+ul {
+  margin: 0;
+  padding-inline: 0;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 2. Vamos a crear 3 animaciones distintas, 1 para animar el background del banner, otra para animar el título y la tercera para animar el parrafo */
+.banner {
+  height: 60vh;
+  background-color: lightcoral;
+  /*background-image: ;*/
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 500ms ease-in;
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.banner p {
+  font-size: 15pt;
+  color: brown;
+  animation: otronombre 3s infinite;
+}
+@keyframes otronombre {
+  from {
+    transform: scale(1.5);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+.banner:hover {
+  opacity: 0.7;
+}
+
+.banner h1 {
+  font-size: 30pt;
+  color: darkred;
+  animation: 400ms ease 0ms infinite normal none running intro;
+}
